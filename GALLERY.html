@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="gallery.CSS">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+</head>
+<body>
+
+<ul>
+  <li><a href="GALLERY.html">Gallery</a></li>
+  
+  <li><a href="nutrition.html">Nutrition</a></li>
+  <li><a href="COURSES.html">Timetable</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Trainings</a>
+    <div class="dropdown-content">
+      <a href="ENDURANCE%20TRAINING.html">Endurance Training</a>
+      <a href="STRENGTH%20TRAINING.html">Strength Training</a>
+      <a href="STATIC%20STRETCHING.html">Static Stretching</a>
+         <a href="AEROBIC.html">Aerobic</a>
+      <a href="BALANCE%20TRAINING.html">Balance Training</a>
+      <a href="FLEXIBILITY.html">Flexibility</a>
+    </div>
+  </li>
+  <li><a href="ABOUT%20US.html">About Us</a></li>
+  <li><a href="home.html">Home</a></li>
+
+</ul>
+<div class="wrapper">
+
+  
+  <div class="hero"><h1><a href="#">Gallery</a></h1>
+  </div> 
+
+</div>
+<center><h1 style="color:black">Use arrow keys to navigate</h1></center>
+<br><br>
+  <i class="material-icons" id="left-btn" style="margin-left: 100px"><img src="image/left-arrow.png"  height="80px" width="80px"></i>
+        <i class="material-icons" id="right-btn" style="margin-left: 1100px"><img src="image/arrow-right.png" height="80px" width="80px"></i>
+
+<div id="img-main-container">
+    <img id="img-main" src="image/banner2.jpg">
+</div>
+
+<div id="gallery-container">
+    <div id="icon-container">
+       
+            <div id="img-container">
+                <img id="img-thumbs" class="selected" src="image/banner2.jpg">
+                <img id="img-thumbs" src="image/3.jpg">
+                <img id="img-thumbs" src="image/diet.jpg">
+                <img id="img-thumbs" src="image/gallery2.jpg">
+                <img id="img-thumbs" src="image/6.jpg">
+                <img id="img-thumbs" src="image/gallery3.jpg">
+                   <img id="img-thumbs" src="image/banner4.jpg">
+                <img id="img-thumbs" src="image/7.jpg">
+                <img id="img-thumbs" src="image/gallery1.jpg">
+             
+                
+                <img id="img-thumbs" src="image/diet2.webp">
+            </div>
+       
+    </div>
+</div>
+    <br><br><br><br>
+<center><h1 style="color:black">Autoplay</h1></center>
+    <br><br>
+<div class="container">
+
+  <div id="display"></div>
+
+  <div id="nav"></div>
+
+</div>
+ <br><br><br><br>
+ <footer class="footer-distributed" id="cont">
+
+  <div class="footer-left">
+
+    <h3>Fitness<span>Club</span></h3>
+
+    <p class="footer-links">
+      <a href="index.html">Home</a>
+      ·
+      <a href="DIET.html">Nutrition</a>
+      ·
+      
+      <a href="ABOUT%20US.html">About</a>
+      ·
+      <a href="GALLERY.html">Gallery</a>
+      .
+      <a href="#FOOTER">Contact</a>
+    </p>
+
+    <p class="footer-company-name">VIKAS KUMAR SUNDA © 2022</p>
+
+    <div class="footer-icons">
+
+      
+      <a href="#"><img src="image/facebook2.png"></a>
+      <a href="#"><img src="image/twitter2.png"></a>
+      <a href="#"><img src="image/linkedin2.png"></a>
+      <a href="#"><img src="image/github2.png"></a>
+
+    </div>
+
+  </div>
+
+			<div class="footer-right">
+
+				<p>Contact Us</p>
+
+				<form action="#FOOTER" method="post">
+
+					<input type="text" name="email" placeholder="Email" required>
+					<textarea name="message" placeholder="Message"></textarea>
+					<button style="margin-right: 100px;">Send</button>
+
+				</form>
+
+			</div>
+
+		</footer><a class="top-link hide" href="" id="js-top">
+ 
+   <span class="screen-reader-text"><img src="image/up-chevron.png" width="90px" height="90px"></span>
+</a>
+</body>
+    <script>
+    let pics = [{
+  name: '',
+  picture: 'image/gym1.jpg',
+  number: 1
+},
+{
+  name: '',
+  picture: 'image/banner3.jpg',
+  number: 2
+},
+{
+  name: '',
+  picture: 'image/banner2.jpg',
+  number: 3
+},
+{
+  name: '',
+  picture: 'image/banner4.jpg',
+  number: 4
+},
+{
+  name: '',
+  picture: 'image/gallery2.jpg',
+  number: 5
+},
+{
+  name: '',
+  picture: 'image/gym2.jpg',
+  number: 6
+},
+{
+  name: '',
+  picture: 'image/gym1.jpg',
+  number: 7
+},
+{
+  name: '',
+  picture: 'image/diet1.jpg',
+  number: 8
+},
+{
+  name: '',
+  picture: 'image/banner2.jpg',
+  number: 9
+},
+{
+  name: '',
+  picture: 'image/gallery1.jpg',
+  number: 10
+}
+];
+
+
+let createGalleryMeny = () => {
+  let nav = document.querySelector('#nav');
+
+  for (let i = 0; i < pics.length; i++) {
+    let img = document.createElement('DIV');
+    img.style.backgroundImage = "url('" + pics[i].picture + "')";
+    img.className = 'pic';
+    nav.appendChild(img)
+  }
+}
+
+
+function loopPics() {
+  let number = 0;
+  let display = document.querySelector('#display');
+
+  display.style.backgroundImage = "url('" + pics[pics.length - 1].picture + "')";
+
+  setInterval(function() {
+    display.style.backgroundImage = "url('" + pics[number].picture + "')";
+    number++
+
+    if (number === pics.length) {
+      number = 0
+    }
+  }, 2000)
+}
+
+
+(function init() {
+  createGalleryMeny();
+  loopPics();
+})();
+    </script>
+    
+    
+    
+    <script>
+ 
+
+var mainImage = document.querySelector('#img-main');
+var thumbGallery = document.querySelectorAll('#img-thumbs');
+var thumb;
+var selectedThumb = document.querySelector('.selected');
+var arrowRight = document.querySelector('#right-btn');
+var arrowLeft = document.querySelector('#left-btn');
+var arrows = document.querySelectorAll('material-icons');
+
+
+arrowRight.addEventListener('click', scrollRight);
+arrowLeft.addEventListener('click', scrollLeft);
+
+function scrollRight(){
+    selectedThumb.nextElementSibling.click();
+}
+
+function scrollLeft(){
+    selectedThumb.previousElementSibling.click();
+}
+
+
+
+for(var i = 0; i < thumbGallery.length; i++){
+    thumb = thumbGallery[i];
+    thumb.addEventListener('click', borderBig);
+}
+
+
+function borderBig(evt){
+    mainImage.src = evt.target.src.replace('img-main');
+    selectedThumb.classList.remove('selected');
+    selectedThumb = evt.target;
+    selectedThumb.classList.add('selected');
+}
+
+
+
+
+
+</script>  
+    
+    
+    
+      
+</html>

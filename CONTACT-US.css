@@ -1,0 +1,153 @@
+#CONTACT-US{
+    width: 100%;
+    padding: 70px 0;
+}
+.CONTACT-US-text{
+    text-align: center;
+    padding-bottom: 70px;
+}
+.CONTACT-US-text p{
+    margin: auto;
+    font-size: 20px;
+    color: #009688;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+.CONTACT-US-text p::after{
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#019587,#fff);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform:rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+.CONTACT-US h1{
+    font-size: 50px;
+}
+.CONTACT-US-box{
+    width: 80%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    
+}
+.CONTACT-US{
+    flex-basis: 50%;
+}
+
+.CONTACT-US-row{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.CONTACT-US-left,.CONTACT-US-right{
+    flex-basis: 45%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.CONTACT-US-right{
+    text-align: right;
+}
+.CONTACT-US-row h1{
+    margin: 10px 0;
+}
+.CONTACT-US-row p{
+     line-height: 35px;
+}
+.CONTACT-US-row:hover{
+    transform: translateY(-7px);
+}
+@media screen and(max-width: 770px){
+    .CONTACT-US-left,.CONTACT-US-right{
+        flex-basis: 100%;
+        font-size: 14px;
+    }
+    .CONTACT-US-row{
+        flex-basis: 100%;
+    }
+}
+
+
+
+
+
+body {
+  height: 2000px;
+  position: relative;
+}
+
+.intro-copy {
+  padding: 1em;
+  margin: 50vh auto;
+  max-width: 15em;
+  font-family: Helvetica;
+  font-weight: lighter;
+  font-size: 2em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.top-link {
+  transition: all .25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	margin: 0 3em 3em 0;
+	border-radius: 50%;
+	padding: .25em;
+	width: 80px;
+	height: 80px;
+  background-color: greenyellow;
+        }
+  
+ 
+	
+
+
+// Text meant only for screen readers.
+.screen-reader-text {
+	position: absolute;
+	clip-path: inset(50%);
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	word-wrap: normal !important;
+	clip: rect(1px, 1px, 1px, 1px);
+
+	&:focus {
+		display: block;
+		top: 5px;
+		left: 5px;
+		z-index: 100000; 
+		clip-path: none;
+		background-color: black;
+		padding: 15px 23px 14px;
+		width: auto;
+		height: auto;
+		text-decoration: none;
+		line-height: normal;
+		color: #444;
+		font-size: 1em;
+		clip: auto !important;
+	}
+}
